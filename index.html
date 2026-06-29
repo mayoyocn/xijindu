@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西津渡 | 魔兽世界怀旧服 熊猫人之谜</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", SimHei, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            color: #003366;
+            position: relative;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.55), transparent 10%),
+                radial-gradient(circle at 90% 10%, rgba(0, 150, 255, 0.35), transparent 14%),
+                radial-gradient(circle at 50% 85%, rgba(0, 200, 255, 0.35), transparent 16%),
+                linear-gradient(180deg, #e6f7ff 0%, #b3e8ff 45%, #80c8ff 100%);
+            background-attachment: fixed;
+        }
+
+        /* 海浪闪烁背景 */
+        @keyframes waveFade {
+            0% {
+                background:
+                    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.55), transparent 10%),
+                    radial-gradient(circle at 90% 10%, rgba(0, 150, 255, 0.35), transparent 14%),
+                    radial-gradient(circle at 50% 85%, rgba(0, 200, 255, 0.35), transparent 16%),
+                    linear-gradient(180deg, #e6f7ff 0%, #b3e8ff 45%, #80c8ff 100%);
+            }
+            50% {
+                background:
+                    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.75), transparent 12%),
+                    radial-gradient(circle at 90% 10%, rgba(0, 150, 255, 0.55), transparent 16%),
+                    radial-gradient(circle at 50% 85%, rgba(0, 200, 255, 0.55), transparent 18%),
+                    linear-gradient(180deg, #d0efff 0%, #99d8ff 45%, #4db8ff 100%);
+            }
+            100% {
+                background:
+                    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.55), transparent 10%),
+                    radial-gradient(circle at 90% 10%, rgba(0, 150, 255, 0.35), transparent 14%),
+                    radial-gradient(circle at 50% 85%, rgba(0, 200, 255, 0.35), transparent 16%),
+                    linear-gradient(180deg, #e6f7ff 0%, #b3e8ff 45%, #80c8ff 100%);
+            }
+        }
+
+        body {
+            animation: waveFade 8s ease-in-out infinite;
+        }
+
+        /* 海浪波纹线 */
+        .wave-lines {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .wave {
+            position: absolute;
+            width: 200%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+            opacity: 0.65;
+            animation: waveMove 12s linear infinite;
+        }
+
+        .wave:nth-child(1) { top: 15%; animation-delay: 0s; }
+        .wave:nth-child(2) { top: 35%; animation-delay: 3s; }
+        .wave:nth-child(3) { top: 55%; animation-delay: 6s; }
+        .wave:nth-child(4) { top: 75%; animation-delay: 9s; }
+
+        @keyframes waveMove {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+        }
+
+        /* 漂浮光点 */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.85);
+            box-shadow: 0 0 10px rgba(0, 200, 255, 0.85);
+            animation: floatParticle 18s linear infinite;
+        }
+
+        .particle:nth-child(1) { left: 8%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 22%; animation-delay: 2s; background: rgba(0, 255, 200, 0.85); }
+        .particle:nth-child(3) { left: 38%; animation-delay: 4s; }
+        .particle:nth-child(4) { left: 55%; animation-delay: 6s; background: rgba(255, 215, 0, 0.85); }
+        .particle:nth-child(5) { left: 72%; animation-delay: 8s; }
+        .particle:nth-child(6) { left: 88%; animation-delay: 10s; background: rgba(0, 255, 200, 0.85); }
+
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) scale(0.6);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        /* 流光文字 */
+        @keyframes goldShine {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        .gold-text {
+            background: linear-gradient(90deg, #8a6d3b, #ffdd77, #00ffc8, #ffdd77, #8a6d3b);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: goldShine 4.5s linear infinite;
+        }
+
+        /* 按钮发光 */
+        @keyframes btnGlow {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(0, 102, 204, 0.55), 0 0 30px rgba(0, 255, 200, 0.35);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(0, 102, 204, 0.85), 0 0 50px rgba(0, 255, 200, 0.55);
+            }
+        }
+
+        .wcl-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 32px;
+            background: linear-gradient(90deg, #0077cc, #00ffc8);
+            border-radius: 999px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            animation: btnGlow 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        .wcl-btn:hover {
+            transform: scale(1.05);
+            background: linear-gradient(90deg, #0088ff, #00ffd5);
+        }
+
+        /* 卡片 */
+        .card {
+            border: 1px solid rgba(0, 136, 255, 0.35);
+            background: linear-gradient(145deg, rgba(240, 248, 255, 0.95), rgba(230, 247, 255, 0.95));
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -100%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent,
+                rgba(255, 215, 0, 0.18),
+                rgba(0, 255, 200, 0.18),
+                transparent
+            );
+            transform: rotate(30deg);
+            transition: top 0.7s ease;
+        }
+
+        .card:hover::before {
+            top: 100%;
+        }
+
+        .card:hover {
+            border-color: rgba(0, 255, 200, 0.55);
+            transform: translateY(-8px);
+            box-shadow:
+                0 15px 35px rgba(0, 136, 255, 0.25),
+                0 0 60px rgba(0, 255, 200, 0.15);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner {
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 1px solid rgba(0, 136, 255, 0.35);
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            font-size: 20px;
+            color: #006699;
+            letter-spacing: 2px;
+        }
+
+        .intro-block {
+            margin-bottom: 50px;
+        }
+
+        .intro-block h2 {
+            font-size: 28px;
+            margin-bottom: 16px;
+        }
+
+        .intro-text {
+            line-height: 1.9;
+            color: #336699;
+            font-size: 16px;
+        }
+
+        .member-wrap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 50px;
+        }
+
+        .member-card h3 {
+            font-size: 22px;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0, 136, 255, 0.35);
+        }
+
+        .player-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .player-tag {
+            padding: 6px 14px;
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid rgba(0, 136, 255, 0.35);
+            border-radius: 8px;
+            font-size: 14px;
+            color: #006699;
+            transition: all 0.3s ease;
+        }
+
+        .player-tag:hover {
+            background: rgba(0, 255, 200, 0.15);
+            border-color: rgba(0, 255, 200, 0.55);
+            transform: scale(1.05);
+        }
+
+        .raid-block {
+            margin-bottom: 40px;
+        }
+
+        .raid-list {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .raid-item {
+            text-align: center;
+        }
+
+        .raid-item h4 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #005588;
+        }
+
+        .raid-data {
+            color: #006699;
+            line-height: 1.7;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(0, 136, 255, 0.35);
+            color: #6699cc;
+            margin-top: 60px;
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+    <div class="wave-lines">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <div class="container">
+        <div class="banner">
+            <h1 class="gold-text">西津渡</h1>
+            <p>魔兽世界怀旧服 熊猫人之谜 | CN-法尔班克斯 10人英雄公会</p>
+            <a href="https://cn.classic.warcraftlogs.com/guild/id/805787" target="_blank" class="wcl-btn">前往WCL公会数据页</a>
+        </div>
+
+        <div class="card intro-block">
+            <h2 class="gold-text">公会名由来 · 千年西津渡</h2>
+            <div class="intro-text">
+                西津渡坐落于镇江，是长江与京杭大运河十字交汇的千年漕运枢纽，被誉为「中国古渡博物馆」。
+                <br><br>
+                自唐代便是兵家要道，南宋韩世忠于此阻击金兵；白居易、苏轼、张祜等文人留下58首传世诗词，名句「金陵津渡小山楼，一宿行人自可愁」写的便是此处。
+                <br><br>
+                现存古迹：国内唯一完整元代过街塔「昭关石塔」、1703年创立世界最早民间水上救援组织「救生会」、古代候船驿站「待渡亭」。青石板明清古街搭配灯火，千年古韵生生不息。
+                <br><br>
+                如今，我们以“西津渡”为名，在魔兽世界怀旧服 熊猫人之谜中集结，以古渡之志，赴迷雾大陆远征。
+            </div>
+        </div>
+
+        <h2 class="gold-text" style="margin-bottom:24px;font-size:28px;">公会人员编制（共23人）</h2>
+        <div class="member-wrap">
+            <div class="card member-card">
+                <h3 class="gold-text">🛡️ 防护坦克 · 4人</h3>
+                <div class="player-list">
+                    <span class="player-tag">小胖泽呀(538)</span>
+                    <span class="player-tag">真的很能抗(527)</span>
+                    <span class="player-tag">酒剑仙灬(526)</span>
+                    <span class="player-tag">晨曦浩浩(516)</span>
+                </div>
+            </div>
+
+            <div class="card member-card">
+                <h3 class="gold-text">💚 治疗职业 · 5人</h3>
+                <div class="player-list">
+                    <span class="player-tag">道中(527)</span>
+                    <span class="player-tag">帕骑维克(550)</span>
+                    <span class="player-tag">黑岛结菜(525)</span>
+                    <span class="player-tag">Merlighting(530)</span>
+                    <span class="player-tag">Redi(513)</span>
+                </div>
+            </div>
+
+            <div class="card member-card">
+                <h3 class="gold-text">⚔️ 输出DPS · 14人</h3>
+                <div class="player-list">
+                    <span class="player-tag">上白石萌音(538)</span>
+                    <span class="player-tag">姜泥灬(527)</span>
+                    <span class="player-tag">柠檬冰冰菟(533)</span>
+                    <span class="player-tag">沐丶叁爺(524)</span>
+                    <span class="player-tag">浅夏灬诗韵(538)</span>
+                    <span class="player-tag">仙妤妤(524)</span>
+                    <span class="player-tag">疯狂的小趴菜(533)</span>
+                    <span class="player-tag">道上(525)</span>
+                    <span class="player-tag">遗忘之言(535)</span>
+                    <span class="player-tag">賊鈊吥改丶旭(538)</span>
+                    <span class="player-tag">闻起来很美味(538)</span>
+                    <span class="player-tag">女票渣(523)</span>
+                    <span class="player-tag">嫖总丶丶(529)</span>
+                    <span class="player-tag">马苦玄(537)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card raid-block">
+            <h2 class="gold-text">副本进度 & 世界/地区排名（10人英雄模式）</h2>
+            <div class="raid-list">
+                <div class="card raid-item">
+                    <h4>雷电王座</h4>
+                    <div class="raid-data">
+                        进度：5/13<br>
+                        世界排名：129<br>
+                        国服地区排名：9
+                    </div>
+                </div>
+
+                <div class="card raid-item">
+                    <h4>HoF / ToES</h4>
+                    <div class="raid-data">
+                        进度：10/10 全通<br>
+                        无榜单排名数据
+                    </div>
+                </div>
+
+                <div class="card raid-item">
+                    <h4>恐惧之心</h4>
+                    <div class="raid-data">
+                        暂无通关进度
+                    </div>
+                </div>
+
+                <div class="card raid-item">
+                    <h4>永春台</h4>
+                    <div class="raid-data">
+                        进度：10/10 全通<br>
+                        世界排名：130<br>
+                        国服地区排名：7
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>西津渡公会 | 魔兽世界怀旧服 熊猫人之谜 | 法尔班克斯服务器</p>
+            <p style="margin-top: 8px;">WCL数据来源：cn.classic.warcraftlogs.com/guild/id/805787</p>
+        </footer>
+    </div>
+</body>
+</html>
