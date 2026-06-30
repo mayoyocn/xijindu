@@ -371,99 +371,179 @@
         <h2 class="gold-text" style="margin-bottom:24px;font-size:28px;">公会人员编制</h2>
         <div class="member-wrap">
             <div class="card member-card">
-                <h3 class="gold-text">🛡️ 防护坦克</h3>
-                <div class="player-list">
-                    <span class="player-tag">小胖泽呀(538)</span>
-                    <span class="player-tag">真的很能抗(527)</span>
-                    <span class="player-tag">酒剑仙灬(526)</span>
-                    <span class="player-tag">晨曦浩浩(516)</span>
-                    <span class="player-tag">道下(525)</span>
-                    <span class="player-tag">遗忘之湮(518)</span>
-                    <span class="player-tag">四只小胖泽(513)</span>
-                    <span class="player-tag">晨曦栋栋(501)</span>
-                    <span class="player-tag">两只小胖泽(533)</span>
-                    <span class="player-tag">上白石萌歌(530)</span>
-                    <span class="player-tag">戦無吥勝丶旭(525)</span>
-                    <span class="player-tag">一只小胖泽(526)</span>
-                    <span class="player-tag">李逍遥长苏(520)</span>
-                    <span class="player-tag">冬日晚风(522)</span>
-                    <span class="player-tag">嫖總丶丶(531)</span>
-                    <span class="player-tag">道亦可道(510)</span>
-                </div>
-            </div>
+               <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>团队WCL跳转面板</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #e8f4ff;
+    padding: 20px;
+}
+/* 统一卡片容器：横向平行自动换行 */
+.row-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+/* 角色卡片，强制可点击，消除遮挡问题 */
+.player-card {
+    border: 1px solid #99ccf0;
+    background: #f0f8ff;
+    border-radius: 8px;
+    padding: 10px 16px;
+    font-size: 18px;
+    color: #114477;
+    text-decoration: none;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+}
+/* 高亮卡片样式 */
+.player-card.active {
+    background: #fff9d9;
+}
+.player-card:hover {
+    background: #d0e8ff;
+}
+.player-card.active:hover {
+    background: #ffeeb8;
+}
+/* 板块标题统一样式 */
+.job-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 30px 0 10px;
+    font-size: 36px;
+    color: #d4aa42;
+    font-weight: bold;
+}
+.divider {
+    border: 1px solid #a0c8ee;
+    margin-bottom: 20px;
+}
+</style>
+</head>
+<body>
 
-            <div class="card member-card">
-                <h3 class="gold-text">💚 治疗职业</h3>
-                <div class="player-list">
-                    <span class="player-tag">道中(527)</span>
-                    <span class="player-tag">帕骑维克(550)</span>
-                    <span class="player-tag">黑岛结菜(525)</span>
-                    <span class="player-tag">Merlighting(530)</span>
-                    <span class="player-tag">Redi(513)</span>
-                    <span class="player-tag">草莓兔子(523)</span>
-                    <span class="player-tag">我不会变小熊(527)</span>
-                    <span class="player-tag">Merlinlight(500)</span>
-                    <span class="player-tag">摸物丶牧(504)</span>
-                    <span class="player-tag">嫖總(523)</span>
-                    <span class="player-tag">遗忘之眼(525)</span>
-                    <span class="player-tag">粤月悦(530)</span>
-                    <span class="player-tag">小野野丶(524)</span>
-                    <span class="player-tag">中二患者(521)</span>
-                    <span class="player-tag">七姨丶骑(508)</span>
-                    <span class="player-tag">道中道(528)</span>
-                </div>
-            </div>
+<!-- 防护职业 -->
+<div class="job-title">
+    <span>✪</span>
+    <span>防护职业</span>
+</div>
+<div class="divider"></div>
+<div class="row-wrap">
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/小胖泽呀">小胖泽呀(538)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/真的很能抗">真的很能抗(527)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/酒剑仙灬">酒剑仙灬(526)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/晨曦浩浩">晨曦浩浩(516)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/道下">道下(525)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/遗忘之湮">遗忘之湮(518)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/四只小胖泽">四只小胖泽(513)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/晨曦栋栋">晨曦栋栋(501)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/两只小胖泽">两只小胖泽(533)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/上白石萌歌">上白石萌歌(530)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/戦無吥勝丶旭">戦無吥勝丶旭(525)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/一只小胖泽">一只小胖泽(526)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/李逍遥长苏">李逍遥长苏(520)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/冬日晚风">冬日晚风(522)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/嫖總丶丶">嫖總丶丶(531)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/道亦可道">道亦可道(510)</a>
+</div>
 
-            <div class="card member-card">
-                <h3 class="gold-text">⚔️ 输出DPS</h3>
-                <div class="player-list">
-                    <span class="player-tag">上白石萌音(538)</span>
-                    <span class="player-tag">姜泥灬(527)</span>
-                    <span class="player-tag">柠檬冰冰菟(533)</span>
-                    <span class="player-tag">沐丶叁爺(524)</span>
-                    <span class="player-tag">浅夏灬诗韵(538)</span>
-                    <span class="player-tag">仙妤妤(524)</span>
-                    <span class="player-tag">疯狂的小趴菜(533)</span>
-                    <span class="player-tag">道上(525)</span>
-                    <span class="player-tag">遗忘之言(535)</span>
-                    <span class="player-tag">賊鈊吥改丶旭(538)</span>
-                    <span class="player-tag">闻起来很美味(538)</span>
-                    <span class="player-tag">女票渣(523)</span>
-                    <span class="player-tag">嫖总丶丶(529)</span>
-                    <span class="player-tag">马苦玄(537)</span>
-                    <span class="player-tag">沐丶大爺(526)</span>
-                    <span class="player-tag">西部宰牛(531)</span>
-                    <span class="player-tag">丶夜神月丷(533)</span>
-                    <span class="player-tag">南宫仆射灬(506)</span>
-                    <span class="player-tag">胆小的烟头(530)</span>
-                    <span class="player-tag">遗忘之颜(529)</span>
-                    <span class="player-tag">愤怒小趴菜(529)</span>
-                    <span class="player-tag">喵喵不发抖(520)</span>
-                    <span class="player-tag">夏威夷果仁(520)</span>
-                    <span class="player-tag">安如静止(506)</span>
-                    <span class="player-tag">能年玲奈(539)</span>
-                    <span class="player-tag">你瞧瞧啥(533)</span>
-                    <span class="player-tag">酷夏的夏(516)</span>
-                    <span class="player-tag">去冰五分甜(508)</span>
-                    <span class="player-tag">丨嫖總丨(530)</span>
-                    <span class="player-tag">黑糖朵朵汐(517)</span>
-                    <span class="player-tag">风吹三雾(516)</span>
-                    <span class="player-tag">遗忘之魇(522)</span>
-                    <span class="player-tag">酷酷的夏(531)</span>
-                    <span class="player-tag">沐丶柒爺(520)</span>
-                    <span class="player-tag">宰牛德(525)</span>
-                    <span class="player-tag">看起来很美味(530)</span>
-                    <span class="player-tag">丶丶嫖总丶丶(530)</span>
-                    <span class="player-tag">愤怒小趴菜(530)</span>
-                    <span class="player-tag">丶丶嫖總丶丶(530)</span>
-                    <span class="player-tag">晨曦阳阳(528)</span>
-                    <span class="player-tag">遗忘之炎(532)</span>
-                    <span class="player-tag">加先生(532)</span>
-                    <span class="player-tag">生财丨有道(521)</span>
-                    <span class="player-tag">毒刺(537)</span>
-                </div>
-            </div>
-        </div>
+<!-- 输出DPS职业 -->
+<div class="job-title">
+    <span>⚔</span>
+    <span>输出职业DPS</span>
+</div>
+<div class="divider"></div>
+<div class="row-wrap">
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/上白石萌音">上白石萌音(538)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/姜泥灬">姜泥灬(527)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/柠檬冰冰菟">柠檬冰冰菟(533)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/沐丶叁爺">沐丶叁爺(524)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/浅夏灬诗韵">浅夏灬诗韵(538)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/仙妤妤">仙妤妤(524)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/疯狂的小趴菜">疯狂的小趴菜(533)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/道上">道上(525)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/遗忘之言">遗忘之言(535)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/戰無吥勝丶旭">戰無吥勝丶旭(538)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/闻起来很美味">闻起来很美味(538)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/女票渣">女票渣(523)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/嫖總丶丶">嫖總丶丶(529)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/马苦玄">马苦玄(537)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/沐丶大爺">沐丶大爺(526)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/西部宰牛">西部宰牛(531)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/丶夜神月丶">丶夜神月丶(533)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/南宫仆射灬">南宫仆射灬(506)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/胆小的烟头">胆小的烟头(530)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/遗忘之颜">遗忘之颜(529)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/愤怒小趴菜">愤怒小趴菜(529)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/喵喵不发抖">喵喵不发抖(520)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/夏威夷果仁">夏威夷果仁(520)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/安如静止">安如静止(506)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/能年玲奈">能年玲奈(539)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/你瞧瞧啥">你瞧瞧啥(533)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/酷酷的夏">酷酷的夏(516)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/去冰五分甜">去冰五分甜(508)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/丨嫖總丨">丨嫖總丨(530)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/黑糖朵朵汐">黑糖朵朵汐(517)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/风吹三雾">风吹三雾(516)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/遗忘之魇">遗忘之魇(522)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/酷酷的夏">酷酷的夏(531)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/沐丶柒爺">沐丶柒爺(520)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/宰牛德">宰牛德(525)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/看起来很美味">看起来很美味(530)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/丶丶嫖總丶丶">丶丶嫖總丶丶(530)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/愤怒小趴菜">愤怒小趴菜(530)</a>
+    <a class="player-card active" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/丶丶嫖總丶丶">丶丶嫖總丶丶(530)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/晨曦阳阳">晨曦阳阳(528)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/遗忘之炎">遗忘之炎(532)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/加先生">加先生(532)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/生财丨有道">生财丨有道(521)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/毒刺">毒刺(537)</a>
+</div>
+
+<!-- 治疗职业 -->
+<div class="job-title">
+    <span>❤</span>
+    <span>治疗职业</span>
+</div>
+<div class="divider"></div>
+<div class="row-wrap">
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/道中">道中(527)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/帕骑维克">帕骑维克(550)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/黑岛结菜">黑岛结菜(525)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/Merlighting">Merlighting(530)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/Redi">Redi(513)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/草莓兔子">草莓兔子(523)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/我不会变小熊">我不会变小熊(527)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/Merlinlight">Merlinlight(500)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/摸物丶牧">摸物丶牧(504)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/嫖總">嫖總(523)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/遗忘之眼">遗忘之眼(525)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/粤月悦">粤月悦(530)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/小野野丶">小野野丶(524)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/中二患者">中二患者(521)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/七姨丶骑">七姨丶骑(508)</a>
+    <a class="player-card" target="_blank" href="https://cn.classic.warcraftlogs.com/character/cn/法尔班克斯/道中道">道中道(528)</a>
+</div>
+
+</body>
+</html>
+
+<div class="divider"></div>
+
+
 
         <div class="card raid-block">
             <h2 class="gold-text">副本进度 & 世界/地区排名（10人英雄模式）</h2>
